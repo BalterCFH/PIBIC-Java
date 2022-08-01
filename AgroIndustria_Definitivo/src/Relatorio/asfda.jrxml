@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Venda_Relatorio" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af9aa0dd-3f79-4768-a759-7b554a5ddec1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *,
+     venda."num_venda" AS venda_num_venda,
+     venda."fucionario" AS venda_fucionario,
+     venda."num_referencia" AS venda_num_referencia,
+     venda."quantidade" AS venda_quantidade,
+     venda."cpf_contribuinte" AS venda_cpf_contribuinte,
+     venda."nome_prod" AS venda_nome_prod,
+     venda."valor" AS venda_valor,
+     venda."competencia" AS venda_competencia,
+     venda."preco_total" AS venda_preco_total,
+     venda."vencimento" AS venda_vencimento
+FROM
+     "venda" venda]]>
+	</queryString>
+	<field name="num_venda" class="java.lang.Integer"/>
+	<field name="fucionario" class="java.lang.String"/>
+	<field name="num_referencia" class="java.lang.String"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="cpf_contribuinte" class="java.lang.String"/>
+	<field name="nome_prod" class="java.lang.String"/>
+	<field name="valor" class="java.math.BigDecimal"/>
+	<field name="competencia" class="java.lang.String"/>
+	<field name="preco_total" class="java.math.BigDecimal"/>
+	<field name="vencimento" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="41a1e602-aa71-40c8-9730-c38b8461914c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[AgroIndustria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="48" width="174" height="22" uuid="3f403f00-fe63-46ab-9273-3d5089dca48a"/>
+				<text><![CDATA[Venda:Relatorio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="be0edab8-2c47-49d7-9cca-cfc18fb69d88"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="55" height="15" uuid="86ce1419-c753-4216-a6ce-ff56ceebd53b"/>
+				<text><![CDATA[num_venda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="55" y="19" width="55" height="15" uuid="ab5f199c-cbd8-421b-8b3b-26362804c8a2"/>
+				<text><![CDATA[fucionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="110" y="19" width="55" height="15" uuid="252701b6-7ba4-4189-a169-767b2ce58eac"/>
+				<text><![CDATA[num_referencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="165" y="19" width="55" height="15" uuid="b0a9785a-9323-477f-b161-1aa260d209ad"/>
+				<text><![CDATA[quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="220" y="19" width="55" height="15" uuid="e902723c-c49a-4e23-95d0-fb69830cecb4"/>
+				<text><![CDATA[cpf_contribuinte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="275" y="19" width="55" height="15" uuid="3b9dcef4-b79d-4f7d-a013-1f75837c44c8"/>
+				<text><![CDATA[nome_prod]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="330" y="19" width="55" height="15" uuid="3f9c33ea-3404-47a5-9c59-466b716f8f96"/>
+				<text><![CDATA[valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="19" width="55" height="15" uuid="e9ffd01e-93f3-4739-896c-784a3b4cf6c3"/>
+				<text><![CDATA[competencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="440" y="19" width="55" height="15" uuid="d2cdbe1f-a886-4559-b6cc-674231230bf8"/>
+				<text><![CDATA[preco_total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="19" width="55" height="15" uuid="761cc379-070e-4beb-9da0-73ce37d6bdc4"/>
+				<text><![CDATA[vencimento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="4b8cd7e1-2cc0-440d-b336-65c9abfd6d68"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="55" height="15" uuid="d4f88b23-a8ad-40f8-a91b-90775e8108fe"/>
+				<textFieldExpression><![CDATA[$F{num_venda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="55" y="0" width="55" height="15" uuid="f39339f9-6aba-4ed6-8b45-ba53fd4a6298"/>
+				<textFieldExpression><![CDATA[$F{fucionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="110" y="0" width="55" height="15" uuid="307e09e7-fd88-420f-9e5a-ff7d968b52d4"/>
+				<textFieldExpression><![CDATA[$F{num_referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="165" y="0" width="55" height="15" uuid="650cf49e-0694-4e13-8ab3-31df7b79e4e7"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="220" y="0" width="55" height="15" uuid="bd518169-dcb7-4844-938a-aa1123847022"/>
+				<textFieldExpression><![CDATA[$F{cpf_contribuinte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="275" y="0" width="55" height="15" uuid="18c9d785-434f-4d7c-bb8d-9df00e3a16ab"/>
+				<textFieldExpression><![CDATA[$F{nome_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="330" y="0" width="55" height="15" uuid="282a2887-0de6-4e9b-8b8a-c9fd9103b001"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="385" y="0" width="55" height="15" uuid="9301ea0c-1880-4860-af1b-58d78e0d1305"/>
+				<textFieldExpression><![CDATA[$F{competencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="440" y="0" width="55" height="15" uuid="7c6f60dd-6ca8-4be5-91d9-a648be03888b"/>
+				<textFieldExpression><![CDATA[$F{preco_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="495" y="0" width="55" height="15" uuid="59d6811f-c2bd-454b-8471-e26231e68b54"/>
+				<textFieldExpression><![CDATA[$F{vencimento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="14547b22-41d9-476f-a60a-f3bfc7bde490"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="8e9c51d4-f23d-4f63-a48d-8dcc9441e45a"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f009c102-4f05-41e0-9c2c-f492a9f03b4e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="72bef249-bb1c-4abc-acb8-01298ae4dedb"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

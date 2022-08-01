@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Usuarios_3" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0bacd0c-51e9-4cd4-81c5-8b37959c89c8">
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="data_inicio" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="data_fim" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cpf_contribuinte" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="total" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[0.00]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     usuarios."data_nascimento" AS usuarios_data_nascimento,
+     usuarios."categoria" AS usuarios_categoria,
+     usuarios."senha" AS usuarios_senha,
+     usuarios."id" AS usuarios_id,
+     usuarios."login" AS usuarios_login
+FROM
+     "usuarios" usuarios]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="login" class="java.lang.String"/>
+	<field name="senha" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<field name="data_nascimento" class="java.lang.String"/>
+	<field name="foto" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="81" width="418" height="20" uuid="46062fe9-2eb3-4b25-8485-82c748bef914"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="101" width="418" height="20" uuid="57f8ac46-eba4-4546-9f8c-5e333eb8731a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLÉGIO TÉCNICO DE FLORIANO-CTF]]></text>
+			</staticText>
+			<image>
+				<reportElement x="242" y="0" width="134" height="81" uuid="2e3a62ab-9166-415e-bc62-e8ee09b0844a"/>
+				<imageExpression><![CDATA["\\src\\Relatorio\\8762_parceiro.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="74" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="0" width="523" height="36" uuid="e09e4a15-807d-41c8-b847-23bb0b9fb6d7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Colégio Técnico de Floriano- CTF,BR 343 ,3,5 KM ,Bairro Meladão,Floriano-PI,Brasil,CEP:64808-605 ,Tel :(89)3522-1768/3284]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="47" width="244" height="20" uuid="11bf59d0-1f84-4193-bd11-00553ad6f157"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE USUÁRIOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="6" width="100" height="20" backcolor="#FFFFFF" uuid="d76a9222-3d69-472c-bc2c-f277981805d9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="6" width="157" height="20" backcolor="#FFFFFF" uuid="943831f4-e0bf-4196-9004-2642e38c14ff"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Login]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="257" y="3" width="51" height="19" backcolor="#FFFFFF" uuid="d97d5f04-0198-48a7-b491-6b25bda1885e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Senha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="355" y="6" width="100" height="20" backcolor="#FFFFFF" uuid="f96090d4-120b-4929-9099-7e7e24a68317"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Categoria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="455" y="6" width="100" height="20" backcolor="#FFFFFF" uuid="2ba324d7-cf57-43cc-85cb-b55b16ccaea1"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Data_nascimento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="0" width="1" height="26" uuid="207f9171-af89-4c55-b6e0-ef562dbe9c36"/>
+			</line>
+			<line>
+				<reportElement x="323" y="1" width="1" height="25" uuid="02297bfd-0b66-407d-9a6f-afd54f7fac32"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="fb26cfce-8532-4377-9395-d12747f0a06a"/>
+			</line>
+			<line>
+				<reportElement x="455" y="0" width="1" height="26" uuid="239e6f45-875f-4dd3-9c4d-fdae7cf4569c"/>
+			</line>
+			<line>
+				<reportElement x="245" y="0" width="1" height="26" uuid="41b29e1e-ae0d-4e62-9a8a-5e594e187410"/>
+			</line>
+			<line>
+				<reportElement x="81" y="0" width="1" height="26" uuid="dda54385-8ecf-4f11-9457-f6c61d28153c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="26" uuid="9cbe2095-49ef-460a-b6c0-041f5f2d3fc6"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="61" height="20" uuid="4352d75b-5b43-4d4c-a9e2-57f8613f26eb"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="127" height="18" uuid="e2aa30bb-228a-4b81-91bf-9c6c4e2d2e51"/>
+				<textFieldExpression><![CDATA[$F{login}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="53" height="20" uuid="ec753903-18cb-4598-b65c-a75e3b641082"/>
+				<textFieldExpression><![CDATA[$F{senha}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="554" y="0" width="1" height="22" uuid="31be6ce3-a528-499a-8e34-3a52fb21d320"/>
+			</line>
+			<line>
+				<reportElement x="1" y="21" width="553" height="1" uuid="26cd49d1-9b27-4103-a30c-ecc86259bd55"/>
+			</line>
+			<textField>
+				<reportElement x="472" y="0" width="72" height="20" uuid="d8bc2e17-d61b-42a7-9030-3cff88987a31"/>
+				<textFieldExpression><![CDATA[$F{data_nascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="100" height="20" uuid="61b9cbac-6418-412c-9776-8d720a740755"/>
+				<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="1" height="22" uuid="d8f17a4e-1f4b-4707-9e0b-b95785011ac3"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="6a6b0b8b-a9fb-4c83-85e2-0053f0c6756e"/>
+			</line>
+			<line>
+				<reportElement x="81" y="1" width="1" height="20" uuid="823a7e0b-622b-4237-90a0-7f483f1d2293"/>
+			</line>
+			<line>
+				<reportElement x="245" y="1" width="1" height="20" uuid="6610ce4d-78ef-443a-a13f-b253efcb6fdd"/>
+			</line>
+			<line>
+				<reportElement x="323" y="1" width="1" height="20" uuid="d57fc688-e7c3-4bbc-ab80-069b1216b6cf"/>
+			</line>
+			<line>
+				<reportElement x="455" y="1" width="1" height="21" uuid="d6b300fb-53ae-4e78-8059-570d9b8a9c64"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="84" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="10" y="22" width="100" height="20" uuid="26a635f6-679e-48eb-badf-5fa65f63170a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="22" width="100" height="20" uuid="a3934323-4bea-4f6e-ba1c-bc733e2066f5"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="402" y="22" width="54" height="20" uuid="4fc12744-6b48-4147-abe6-f1fd0e622da7"/>
+				<text><![CDATA[Página]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

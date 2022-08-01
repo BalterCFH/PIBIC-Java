@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Produtos_3" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0bacd0c-51e9-4cd4-81c5-8b37959c89c8">
+	<property name="ireport.zoom" value="1.1000000000000048"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="data_inicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="data_fim" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     produtos_ru."id" AS produtos_ru_id,
+     produtos_ru."quantidade" AS produtos_ru_quantidade,
+     produtos_ru."unidade" AS produtos_ru_unidade,
+     produtos_ru."nome_prod" AS produtos_ru_nome_prod,
+     produtos_ru."competencia" AS produtos_ru_competencia
+FROM
+     "produtos_ru" produtos_ru]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="valor" class="java.lang.Double"/>
+	<field name="unidade" class="java.lang.String"/>
+	<field name="nome_prod" class="java.lang.String"/>
+	<field name="competencia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="154" splitType="Stretch">
+			<staticText>
+				<reportElement x="55" y="103" width="418" height="20" uuid="46062fe9-2eb3-4b25-8485-82c748bef914"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="123" width="418" height="20" uuid="57f8ac46-eba4-4546-9f8c-5e333eb8731a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLÉGIO TÉCNICO DE FLORIANO-CTF]]></text>
+			</staticText>
+			<image>
+				<reportElement x="233" y="13" width="90" height="80" uuid="e907bbca-5aa8-4069-8ac3-4472f2ef0acf"/>
+				<imageExpression><![CDATA["\\src\\Relatorio\\8762_parceiro.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="134" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="2" width="523" height="36" uuid="e09e4a15-807d-41c8-b847-23bb0b9fb6d7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Colégio Técnico de Floriano- CTF,BR 343 ,3,5 KM ,Bairro Meladão,Floriano-PI,Brasil,CEP:64808-605 ,Tel :(89)3522-1768/3284]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="38" width="283" height="20" uuid="5a28e648-2656-4704-b457-78996b3d8fed"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE PRODUTOS DO R.U]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="61" width="544" height="55" uuid="ebd5064a-f2bc-44c5-854b-61d132829e4a"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Estamos encaminhando a V.Sª o relatório de vendas  da fazenda experimental "Novo Recreio", dos produtos enviados ao Restaurante Universitário do Campus Amilcar Ferreira Sobral - CAFS, referente  a]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="17" y="87" width="67" height="20" uuid="26c4a047-a99f-4487-b4ea-93604a10f99d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="87" width="67" height="20" uuid="5f6e5d3d-fc93-41a7-93af-9a9d65520ff9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{data_fim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="87" width="15" height="20" uuid="46f66f3e-532e-42d5-8657-c87d0682678e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="87" width="8" height="20" uuid="b008a1c0-6383-4814-bc0d-24a960697edd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="26" y="7" width="33" height="16" backcolor="#FFFFFF" uuid="4a02a6f8-aa7e-4e88-ac17-8cb7864b3080"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Código ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="89" y="7" width="88" height="17" backcolor="#FFFFFF" uuid="490487eb-a781-43f1-8d00-b0744cf76c51"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="301" y="6" width="168" height="20" backcolor="#FFFFFF" uuid="b486cb22-aa4a-40f8-85a1-245e2930cd7a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Nome do Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="469" y="6" width="86" height="17" backcolor="#FFFFFF" uuid="0fc390c9-ab5d-40c0-be70-ab22e9e19816"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="4cb1a97a-71ec-442a-90c5-b5bbb08cb945"/>
+			</line>
+			<line>
+				<reportElement x="0" y="25" width="554" height="1" uuid="1df134eb-74f6-4098-900c-7cd45105857e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="25" uuid="d3a1e319-4fe2-46d9-957b-bcc8694435bc"/>
+			</line>
+			<line>
+				<reportElement x="88" y="1" width="1" height="24" uuid="36d53a69-a662-46b1-a86c-90c9a82af3aa"/>
+			</line>
+			<line>
+				<reportElement x="177" y="1" width="1" height="24" uuid="6185ae6f-6bad-4529-87b8-0ca3cc721481"/>
+			</line>
+			<line>
+				<reportElement x="301" y="1" width="1" height="24" uuid="fc83fa60-2be4-4b31-bbae-9d0b7d54af89"/>
+			</line>
+			<line>
+				<reportElement x="472" y="1" width="1" height="24" uuid="beeab4d9-fe07-4d12-b380-c479af3317fe"/>
+			</line>
+			<line>
+				<reportElement x="554" y="2" width="1" height="24" uuid="52b7fb8e-672d-4519-b6cf-7c353df85649"/>
+			</line>
+			<line>
+				<reportElement x="88" y="2" width="1" height="20" uuid="1c9b4858-88e1-4e85-a518-6cd929f439d3"/>
+			</line>
+			<staticText>
+				<reportElement x="189" y="4" width="100" height="20" uuid="cd196769-3cd6-4ebe-b3ef-ba37626016e2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Competencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="21" width="555" height="1" uuid="01a94656-c17d-4cc1-9721-499fa29168b7"/>
+			</line>
+			<line>
+				<reportElement x="472" y="-4" width="1" height="26" uuid="e82af750-d80f-40c6-8508-6faaff516e48"/>
+			</line>
+			<line>
+				<reportElement x="301" y="-4" width="1" height="26" uuid="abd38c09-5aac-4ced-907e-918f58768899"/>
+			</line>
+			<line>
+				<reportElement x="177" y="-4" width="1" height="25" uuid="c957cfa5-ef26-428d-8965-db0b1a4e8612"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-4" width="1" height="26" uuid="54869b97-b7ad-46a4-bb09-dc87e823cd7b"/>
+			</line>
+			<line>
+				<reportElement x="554" y="-3" width="1" height="25" uuid="4d9c6e9a-c9ad-445f-bac7-194d9baf6314"/>
+			</line>
+			<line>
+				<reportElement x="88" y="-4" width="1" height="25" uuid="505c0902-774c-495a-9e9d-0162d8c30209"/>
+			</line>
+			<textField>
+				<reportElement x="21" y="2" width="53" height="20" uuid="0b13dd94-d8d5-4cb6-afdb-71458de187eb"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="93" y="1" width="70" height="20" uuid="fa96dddd-a97a-4585-a1f2-657c84531f17"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="2" width="100" height="20" uuid="50e52c19-3fa6-445a-be32-b25452cb59cb"/>
+				<textFieldExpression><![CDATA[$F{competencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="2" width="129" height="20" uuid="7063740a-a5f6-4c14-87b1-c18f3e62a774"/>
+				<textFieldExpression><![CDATA[$F{nome_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="2" width="71" height="20" uuid="07568137-1639-48cc-a2e7-04b8c685aca8"/>
+				<textFieldExpression><![CDATA[$F{unidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="148" y="33" width="279" height="20" uuid="298efb7e-ca53-4aa2-bad7-ee6025c575ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Chefe do Serviço de Atvidades Agropecuárias]]></text>
+			</staticText>
+			<line>
+				<reportElement x="155" y="24" width="253" height="1" uuid="edbb4316-eda2-4a51-8a6b-caf3b69ea98f"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="537" y="22" width="18" height="20" uuid="69ed0626-e365-49bd-99a0-7513c43618c4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="74" y="22" width="159" height="20" uuid="895a1d52-2720-491e-ba20-96bb649bb083"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="492" y="22" width="45" height="20" uuid="410762ed-ccf2-4efc-8c83-9db72c765339"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Página]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="22" width="87" height="20" uuid="c36f8019-34f1-4e5c-a62f-7ca328fc3eca"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Floriano - PI,]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

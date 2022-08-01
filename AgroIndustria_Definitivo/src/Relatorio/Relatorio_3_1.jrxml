@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_3" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e0bacd0c-51e9-4cd4-81c5-8b37959c89c8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="19"/>
+	<property name="ireport.y" value="17"/>
+	<parameter name="data_inicio" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="data_fim" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cpf_contribuinte" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="total" class="java.lang.Double">
+		<defaultValueExpression><![CDATA[0.00]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     venda."num_venda" AS venda_num_venda,
+     venda."num_referencia" AS venda_num_referencia,
+     venda."quantidade" AS venda_quantidade,
+     venda."cpf_contribuinte" AS venda_cpf_contribuinte,
+     venda."valor" AS venda_valor,
+     venda."nome_prod" AS venda_nome_prod,
+     venda."competencia" AS venda_competencia
+FROM
+     "venda" venda]]>
+	</queryString>
+	<field name="num_venda" class="java.lang.Integer"/>
+	<field name="num_referencia" class="java.lang.String"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="cpf_contribuinte" class="java.lang.String"/>
+	<field name="nome_prod" class="java.lang.String"/>
+	<field name="valor" class="java.math.BigDecimal"/>
+	<field name="competencia" class="java.sql.Date"/>
+	<field name="preco_total" class="java.math.BigDecimal"/>
+	<field name="unidade" class="java.lang.String"/>
+	<field name="venda_num_venda" class="java.lang.Integer"/>
+	<field name="venda_num_referencia" class="java.lang.String"/>
+	<field name="venda_quantidade" class="java.lang.Integer"/>
+	<field name="venda_cpf_contribuinte" class="java.lang.String"/>
+	<field name="venda_valor" class="java.math.BigDecimal"/>
+	<field name="venda_nome_prod" class="java.lang.String"/>
+	<field name="venda_competencia" class="java.sql.Date"/>
+	<filterExpression><![CDATA[$F{num_venda}$F{num_referencia}$F{quantidade}$F{cpf_contribuinte}$F{nome_prod}$F{valor}$F{competencia}$F{preco_total}$F{unidade}]]></filterExpression>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="54" y="26" width="418" height="20" uuid="46062fe9-2eb3-4b25-8485-82c748bef914"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDADE FEDERAL DO PIAUÍ - UFPI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="46" width="418" height="20" uuid="57f8ac46-eba4-4546-9f8c-5e333eb8731a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COLÉGIO TÉCNICO DE FLORIANO-CTF]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="97" width="269" height="20" uuid="697627c0-37a7-4a65-ba44-36eb2c291601"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Ao:Diretor do Colégio Técnico de Floriano - CTF/UFPI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="77" width="247" height="20" uuid="6989b1ca-5492-493c-ae7c-77d5eb4c8d38"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Do:Chefe de Serviços de Atividades Agropecuárias]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="46" width="81" height="20" uuid="2938bf67-a6e0-4551-a583-af63199904e9"/>
+				<textFieldExpression><![CDATA[$P{data_inicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="421" y="46" width="28" height="20" uuid="97fa0425-1463-4637-95b2-cb743e423265"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="449" y="46" width="75" height="20" uuid="c61c7b8c-8968-4148-a02a-64b9494d9322"/>
+				<textFieldExpression><![CDATA[$P{data_fim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="46" width="90" height="20" uuid="cdb7de1e-ca4a-4bd2-a0f2-89550b650503"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Floriano - PI,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="10" width="523" height="36" uuid="e09e4a15-807d-41c8-b847-23bb0b9fb6d7"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="9" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Colégio Técnico de Floriano- CTF,BR 343 ,3,5 KM ,Bairro Meladão,Floriano-PI,Brasil,CEP:64808-605 ,Tel :(89)3522-1768/3284]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="57" width="139" height="20" uuid="5a28e648-2656-4704-b457-78996b3d8fed"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Memo n°058/2019]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="144" width="533" height="34" uuid="96f87754-93de-4a0c-9278-9f75081491f0"/>
+				<textElement textAlignment="Justified">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Estamos encaminhando a V.Sa,relatório de vendas  da fazenda experimental "Novo Recreio",deste Colégio  Técnico de Floriano -CTF   referente  a]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="201" y="158" width="100" height="20" uuid="524a54d4-aee9-4f50-84f2-759064ff13ff"/>
+				<textFieldExpression><![CDATA[$P{data_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="158" width="100" height="20" uuid="5dd7600a-fa02-4c07-8171-ee90549543e0"/>
+				<textFieldExpression><![CDATA[$P{data_fim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="301" y="158" width="45" height="20" uuid="0252df7d-0e50-473b-b018-a0c6b71c681f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[e]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="160" y="0" width="75" height="20" backcolor="#666666" uuid="0878d74f-814e-4179-bf8f-6fc37bb564f6"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[nome_prod]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="71" y="1" width="89" height="20" backcolor="#666666" uuid="b23c2c2c-33d1-4f72-b1e1-9ff721bb6314"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[cpf_contribuinte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="386" y="1" width="89" height="20" backcolor="#666666" uuid="7db4c8d1-0d78-450c-a09b-373a80d2048e"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[num_referencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="475" y="1" width="80" height="20" backcolor="#666666" uuid="4f9e09f5-7ee7-4379-9de9-26f052f26b53"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="313" y="0" width="73" height="20" backcolor="#666666" uuid="70d572b3-5b98-4f33-bf2f-009e1250f02e"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="235" y="0" width="78" height="20" backcolor="#666666" uuid="c566869f-9ef8-4bae-a999-f9a214401f6e"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[competencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="71" height="20" backcolor="#666666" uuid="b80b3716-d2fe-49bb-888a-ee1dcd6d10ac"/>
+				<text><![CDATA[num_venda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="71" y="0" width="90" height="20" uuid="e64c110d-3852-4415-b946-1da3300b06ea"/>
+				<textFieldExpression><![CDATA[$F{cpf_contribuinte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="75" height="20" uuid="be1cb053-ae41-4444-81f9-0ff2e440c1dd"/>
+				<textFieldExpression><![CDATA[$F{nome_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="72" height="20" uuid="aec240d3-0ec2-48dc-952c-aab8dd4e6ba5"/>
+				<textFieldExpression><![CDATA[$F{competencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="76" height="20" uuid="b15441ca-3ba9-4d08-a139-6ce709430e62"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="92" height="20" uuid="15c90f57-adcc-4c23-81fa-4359818d93dc"/>
+				<textFieldExpression><![CDATA[$F{num_referencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="83" height="20" uuid="c0e2c0f0-d87f-4022-93bd-a072f0446fc0"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="71" height="20" uuid="62f4c3ae-534f-461d-9cfc-c6fb985a7b2c"/>
+				<textFieldExpression><![CDATA[$F{num_venda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="399" y="12" width="47" height="20" uuid="100a116c-65b7-4db3-84e1-b7791a20203e"/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="12" width="100" height="20" uuid="8c762728-ef64-4c79-9305-6a904068af4b"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="46" width="279" height="20" uuid="09e4c757-16fa-4cfd-a471-b8d8c0cd9af6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[SIAPE:1167248]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="26" width="279" height="20" uuid="36eed032-3d38-4bfd-bf74-043e6444aa37"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Chefe do Serviço de Atvidades Agropecuárias]]></text>
+			</staticText>
+			<line>
+				<reportElement x="149" y="17" width="253" height="1" uuid="2d5707a3-3eb9-4555-858a-ba93bfeb4420"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
